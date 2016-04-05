@@ -9,30 +9,23 @@ number_picked = random.randint(1, 100)
 guess = int(input('Guess the number: '))
 
 tries = 1
-while guess != number_picked:
+
+while guess != number_picked and tries < 3:
 
 	if guess > number_picked:
 		guess = int(input('Try a lower number: '))
 
-	else:
+	elif guess < number_picked:
 		guess = int(input('Try a higher number: '))
 
 	tries += 1
 
-	if tries == 3:
-		print('loser')
+if tries == 3:
 
-		print('\nThe number was: ', number_picked)
-		print(name, ", it took you", tries, "tries to fail.")
-		break
+	print('LOSER! \nThe number was: ', number_picked)
+	print("and it took you", tries, "tries to fail.")
 
+else:
 
-print('\nThe number was: ', number_picked)
-print(name, ", it took you", tries, "tries.")
-
-
-
-
-
-
-input("\n\nPress the enter key to exit.")
+	print('\nThe number was: ', number_picked)
+	print("and it took you", tries, "tries.")

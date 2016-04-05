@@ -10,30 +10,27 @@ import random
 
 number_entered = int(input('enter a number: '))
 
-
 tries = 1
-guess = random.randint(1, 100)
-new_guess = 0
+guess = 0
+low = 1
+high = 100
 
-while number_entered != guess or new_guess:
-	if guess or new_guess > number_entered:
-		print("Lower...")
-		new_guess = random.randint(1, 100)
-		print(new_guess)
-
+while number_entered != guess:
+	guess = random.randint(low,high)
+	#print('computer guess: ', guess)
+	if guess > number_entered:
+		print("Computer guessed:",guess," but the number was lower")
+		high = guess - 1
+		tries += 1
+	elif guess < number_entered:
+		print("Computer guessed:",guess," but the number was higher")
+		low = guess + 1
+		tries += 1
 	else:
-		print("Higher...")
-		new_guess = random.randint(1, 100)
-		print(new_guess)
-
-	tries += 1
+		break
 
 
-
-
-print(guess)
-print(new_guess)
-print("You guessed it!  The number was", number_entered)
-print("And it only took you", tries, "tries!\n")
+print("The number was", number_entered)
+print("And it only took", tries, "tries!\n")
 
 input("\n\nPress the enter key to exit.")

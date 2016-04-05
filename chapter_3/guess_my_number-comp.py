@@ -29,7 +29,6 @@ while number_entered != guess:
 	else:
 		break
 
-
 print("The number was", number_entered)
 print("And it only took", tries, "tries!\n")
 

@@ -14,4 +14,3 @@ for letter in message:
 print("\nYour message without vowels is:", new_message)
 
 input("\n\nPress the enter key to exit.")
-

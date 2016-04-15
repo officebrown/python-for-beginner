@@ -37,7 +37,7 @@ print(chest)
 
 print("You add the contents of the chest to your inventory.")
 inventory += chest
-print(inventory[4])
+print(inventory[0:5])
 print("Your inventory is now:")
 print(inventory)
 
